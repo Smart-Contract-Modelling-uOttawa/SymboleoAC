@@ -60,8 +60,8 @@ Powers
 ACPolicy with Controller regulator //controller of policy are the regulator who can override rule and pre-authrization rule
  Rule1: Grant read To buyer On goods.quantity by seller; //access to specific asset attribute
  Rule2: Grant read To assessor  On obligations.delivery by seller; //access to obligation
- Rule3: Grant read To transportCo On inspectedQuality by regulator;
- Rule4: Grant read To seller On inspectedQuality by regulator;
+ Rule3: Grant write To transportCo On inspectedQuality by assessor;
+ Rule4: Grant write To seller On inspectedQuality by assessor;
  Rule5: Grant read To buyer On temploctime.Temp by regulator; 
  Rule6: Grant write To assessor On inspectedQuality by regulator;
  Rule7: Grant write To transportCo On  powers.suspendDelivery by seller; 
