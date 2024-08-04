@@ -46,6 +46,7 @@ Obligations
   // controller by default is the debtor (seller) of obligation delivery 
   delivery: Obligation(seller, buyer, true, WhappensBefore(delivered, delivered.delDueDate) and Happens(TempLoCTime) and temploctime.Temp <= 18 and delivered.deliveryAddress == buyer.warehouse); 
   inspectMeat: Happens(delivered) -> Obligation(assessor, buyer, Happens(passwordNotification), Happens(inspectedQuality) and inspectedQuality.barFound == goods.barcode and inspectedQuality.qualityFound == goods.quality  and inspectedQuality.quantityFound == goods.quantity);
+  unLoad: Happens(unLoaded) -> Obligation(assessor,seller, true,UnLoaded.UnLoadRresource :=1 );
   payment: O(buyer, seller , Happens(unLoaded), WhappensBefore(paid, paid.payDueDate));  
   latePayment: Happens(Violated(obligations.payment)) -> O(buyer, seller, true, Happens(paidLate));
     
